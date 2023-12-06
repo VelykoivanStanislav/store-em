@@ -120,7 +120,8 @@
     }
   
     // Функция для добавления нового продукта
-    function addProduct() {
+// Функция для добавления нового продукта
+function addProduct() {
   // Ваш URL для добавления продукта
   const url = 'http://localhost:3000/products';
 
@@ -133,7 +134,11 @@
   const formData = new FormData();
   formData.append('name', productName);
   formData.append('category', productCategory);
-  formData.append('image', productImage);
+
+  // Если выбран файл изображения, добавляем его как blob
+  if (productImage) {
+    formData.append('image', productImage);
+  }
 
   // Используем fetch для выполнения POST-запроса
   fetch(url, {
@@ -154,8 +159,9 @@
 }
   </script>
 <script>
-    // Функция для загрузки продуктов по введенной категории
-    function loadProductsByCategory() {
+
+  // Используем fetch для выполнения GET-запроса
+  function loadProductsByCategory() {
   // Ваш URL для загрузки продуктов по категории
   const selectedCategory = document.getElementById('selectedCategory').value;
   const url = `http://localhost:3000/products/category/${selectedCategory}`;
@@ -195,8 +201,8 @@
       });
     })
     .catch(error => console.error('Error loading products by category:', error));
-
 }
+
   </script>
 </body>
 </html>

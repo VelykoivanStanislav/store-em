@@ -1,0 +1,18 @@
+{
+  "name": "image-converter",
+  "version": "1.0.0",
+  "description": "",
+  "main": "image-converter.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC",
+  "dependencies": {
+    "@azure/storage-blob": "^12.17.0",
+    "@azure/storage-queue": "^12.16.0",
+    "@img/sharp-win32-x64": "^0.33.0",
+    "sharp": "^0.33.0"
+  }
+}
